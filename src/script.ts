@@ -6,8 +6,32 @@ import LanceService from './services/LanceService'
 const prisma = new PrismaClient()
 
 async function main() {
+ //Insira as queries neste formato:
+    // const user1 = await prisma.usuario.create({
+    //     data: {
+    //         nome: "Marley",
+    //         email: "marnemarne@marne.com.uvv"
+    //     }
+    // })
+    // const leilao1 = await prisma.leilao.create({
+    //     data: {
+    //         idleilao: "1",
+    //         idProduto: "1",
+    //         lanceid: "1",
+    //         preco: 12.2,
+    //         donoid: "Marley"
+    //     }
+    // })
 
-  await prisma.usuario.create({
+    // const lance1 = await prisma.lance.create({
+    //     data: {
+    //         idlance: "1",
+    //         compradorid: "Marley",
+    //         leilaoid: "1",
+    //         valor: 12.2
+    //     }
+    // })
+ /* await prisma.usuario.create({
     data: {
         nome: 'otavio fulano',
         email: 'fulano@gmail.com'
@@ -19,7 +43,7 @@ async function main() {
        nome: 'Caroline Andrade',
        email: 'carolineAndrade@gmail.com'
     }
-  })
+  })*/
 
  /* await prisma.lance.create({
     data:{

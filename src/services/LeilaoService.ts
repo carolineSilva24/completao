@@ -47,11 +47,11 @@ class LeilaoService {
         }
     }
 
-    async updateLeilao(id: string, leilao: Prisma.LeilaoUpdateInput){
+    async updateLeilao(idleilao: string, leilao: Prisma.LeilaoUpdateInput){
         try{
             const updatedLeilao = await prisma.leilao.update({
                 where: {
-                    id
+                    idleilao
                 },
                 data: leilao
             });
@@ -63,11 +63,11 @@ class LeilaoService {
         }
     }
 
-    async fecharLeilao(id: string){
+    async fecharLeilao(idleilao: string){
         try{
             const deletedUser = await prisma.leilao.delete({
                 where: {
-                    id
+                    idleilao
                 }
             });
 

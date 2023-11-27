@@ -46,11 +46,11 @@ class UsuarioService {
         }
     }
 
-    async updateUsuario(id: string, user: Prisma.UsuarioUpdateInput){
+    async updateUsuario(nome: string, user: Prisma.UsuarioUpdateInput){
         try{
             const updatedUser = await prisma.usuario.update({
                 where: {
-                    id
+                    nome
                 },
                 data: user
             });
@@ -62,11 +62,11 @@ class UsuarioService {
         }
     }
 
-    async deleteUsuario(id: string){
+    async deleteUsuario(nome: string){
         try{
             const deletedUser = await prisma.usuario.delete({
                 where: {
-                    id
+                    nome
                 }
             });
 

@@ -11,29 +11,28 @@ datasource db {
 }
 
 model Usuario{
-  id       String @id @default(uuid())
-  nome     String?
-  email    String @unique
-  leilao   Leilao[]
-  lance    Lance[]
+  nome      String @id @default(uuid())
+  email     String @unique
+  leilao    Leilao[]
+  lance     Lance[]
 }
 
 model Lance{
-  id          String @id @default(uuid()) 
-  comprador   Usuario @relation(fields: [compradorid], references: [id])
+  idlance     String @id @default(uuid()) 
+  comprador   Usuario @relation(fields: [compradorid], references: [nome])
   compradorid String
-  leilao      Leilao @relation(fields: [leilaoid], references: [id])
+  leilao      Leilao @relation(fields: [leilaoid], references: [idleilao])
   leilaoid    String 
   valor       Float
 }
 
 model Leilao{
-  id         String @id @default(uuid())
-  produto    String
+  idleilao   String @id @default(uuid())
+  idProduto  String
   preco      Float
-  datalimite DateTime
-  dono       Usuario @relation(fields: [donoid], references: [id])
+  datalimite DateTime @default(now())
+  dono       Usuario @relation(fields: [donoid], references: [nome])
   donoid     String
-  lista_de_lances String 
-  lance      Lance[]
+  lista_de_lances Lance[] 
+  lanceid    String
 }

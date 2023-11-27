@@ -21,8 +21,6 @@ class UsuarioController{
                 message: 'Favor inserir os dados no corpo da requisição'
             })
         }
-        res.send('Create usuario');
-
     }
 
     async listUsuarios(req: Request, res: Response){
@@ -30,12 +28,10 @@ class UsuarioController{
 
         res.render('users', { users: users })
 
-        /*res.status(200).json({
+        res.status(200).json({
             status: 'ok',
             users: users
-        })*/
-
-        res.send('List usuario');
+        })
     }
 
     async updateUsuarios(req: Request, res: Response){

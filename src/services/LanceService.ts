@@ -47,11 +47,11 @@ class LanceService {
         }
     }
 
-    async updateLance(id: string, lance: Prisma.LanceUpdateInput){
+    async updateLance(idlance: string, lance: Prisma.LanceUpdateInput){
         try{
             const updatedLance = await prisma.lance.update({
                 where: {
-                    id
+                    idlance
                 },
                 data: lance
             });
@@ -63,11 +63,11 @@ class LanceService {
         }
     }
 
-    async deleteLance(id: string){
+    async deleteLance(idlance: string){
         try{
             const deletedLance = await prisma.lance.delete({
                 where: {
-                    id
+                    idlance
                 }
             });
 

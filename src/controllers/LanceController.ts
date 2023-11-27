@@ -21,19 +21,16 @@ class LanceController{
                 message: 'Favor inserir os dados no corpo da requisição'
             })
         }
-
-        res.send('Create lance');
     }
 
     async listLance(req: Request, res: Response){
         const lances = LanceService.listLance();
 
         res.render('lances', {lances: lances})
-        /*res.status(200).json({
+        res.status(200).json({
             status: 'ok',
             lances: lances
-        })*/
-        res.send('List lance');
+        })
     }
 
     async updateLance(req: Request, res: Response){

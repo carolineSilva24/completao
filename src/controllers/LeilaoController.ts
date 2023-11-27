@@ -9,7 +9,7 @@ class LeilaoController{
     async createLeilao(req: Request, res: Response){
         const dados: Prisma.LeilaoCreateInput = req.body;
         
-        if(dados.datalimite !== "" && dados.lista_de_lances !== "" && dados.preco !== 0 && dados.produto !== ""){
+        if(dados.idleilao){
             const newleilao = await LeilaoService.createLeilao(dados)
             res.status(200).json({
                 status: 'ok',
@@ -21,20 +21,16 @@ class LeilaoController{
                 message: 'Favor inserir os dados no corpo da requisição'
             })
         }
-
-        res.send('Create leilao');
     }
 
     async listLeilao(req: Request, res: Response){
         const leiloes = LeilaoService.listLeilao();
 
         res.render('leiloes', {leiloes: leiloes})
-        /*res.status(200).json({
+        res.status(200).json({
             status: 'ok',
             leiloes: leiloes
-        })*/
-
-        res.send('List leilao');
+        })
     }
 
     async updateLeilao(req: Request, res: Response){
