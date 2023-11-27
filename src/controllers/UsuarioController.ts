@@ -24,10 +24,11 @@ class UsuarioController{
     }
 
     async listUsuarios(req: Request, res: Response){
-        const users = UsuarioService.listUsuario();
+        const users = await UsuarioService.listUsuario();
 
         res.render('users', { users: users })
 
+        console.log(users);
         res.status(200).json({
             status: 'ok',
             users: users

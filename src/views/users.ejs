@@ -32,7 +32,6 @@
     <h1>Lista de usuários</h1>
     <table>
         <thead>
-            <th>ID</th>
             <th>Nome</th>
             <th>Email</th>
             <th>Ações</th>
@@ -41,10 +40,7 @@
             <% for(var i=0; i < users.length; i++) { %>
                 <tr>
                     <td>
-                        <%= users[i].id %>
-                    </td>
-                    <td>
-                        <%= users[i].name %>
+                        <%= users[i].nome %>
                     </td>
                     <td>
                         <%= users[i].email %>
