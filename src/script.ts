@@ -13,6 +13,7 @@ async function main() {
     //         email: "marnemarne@marne.com.uvv"
     //     }
     // })
+ 
     // const leilao1 = await prisma.leilao.create({
     //     data: {
     //         idleilao: "1",
@@ -32,19 +33,19 @@ async function main() {
     //     }
     // })
  
- /*    const usuario2 = await prisma.usuario.create({
-           data: {
-               nome: 'otavio fulano',
-               email: 'fulano@gmail.com'
-    }
-       })
+    // const usuario2 = await prisma.usuario.create({
+    //     data: {
+    //         nome: 'otavio fulano',
+    //         email: 'fulano@gmail.com'
+    //     }
+    // })
 
-       const usuario3 = await prisma.usuario.create({
-           data:{
-               nome: 'Caroline Andrade',
-               email: 'carolineAndrade@gmail.com'
-    }
-  })*/
+    // const usuario3 = await prisma.usuario.create({
+    //     data:{
+    //         nome: 'Caroline Andrade',
+    //         email: 'carolineAndrade@gmail.com'
+    //     }
+    // })*/
 }
 
 main()
